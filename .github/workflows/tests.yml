@@ -11,4 +11,6 @@ jobs:
           python-version: "3.10"
       - uses: actions/checkout@v3
       - name: Style Check
-        run: flake8 exclude=*.pyc,venv/.,__init__.py max-line-length=120 format=html htmldir=reports/flake8_report
+        run: |
+          pip install flake8
+          flake8 exclude=*.pyc,venv/.,__init__.py max-line-length=120 format=html htmldir=reports/flake8_report
