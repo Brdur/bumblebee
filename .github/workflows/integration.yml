@@ -19,6 +19,7 @@ jobs:
           chat_id: ${{ secrets.CHAT_ID }}
           message: <b>Success!</b>
           parse_mode: HTML
+          protect_content: True
           disable_notification: False
           file_path: fake_dir
 
