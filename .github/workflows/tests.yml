@@ -13,7 +13,7 @@ jobs:
       - name: Style Check
         run: |
           pip install flake8
-          flake8 exclude=*.pyc,venv/.,__init__.py max-line-length=120 format=html htmldir=flake8_report
+          flake8 --exclude=*.pyc,venv/.,__init__.py --max-line-length=120 --format=html --htmldir=flake8_report
       - name: Report upload
         if: always()
         uses: actions/upload-artifact@v3

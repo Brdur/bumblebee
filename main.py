@@ -15,12 +15,12 @@ def main():
         parse_m = os.environ.get('INPUT_DISABLE_NOTIFICATION')
     else:
         print('WARNING: PARSE MODE IS NOT RECOGNISED')
-    bot.send_message(int(os.environ.get('INPUT_CHAT_ID')), message,
-                     parse_mode=parse_m,
-                     disable_notification=disable_n,
-                     protect_content=protect_c
-                     )
-    print(f"::set-output name=result::Success!")
+    msg = bot.send_message(int(os.environ.get('INPUT_CHAT_ID')), message,
+                           parse_mode=parse_m,
+                           disable_notification=disable_n,
+                           protect_content=protect_c
+                           )
+    print(f"::set-output name=result::{msg.text}")
 
 
 if __name__ == "__main__":
