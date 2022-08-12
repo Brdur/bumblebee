@@ -20,4 +20,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Report
-          path: reports
+          path: flake8_report

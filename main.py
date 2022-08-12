@@ -1,5 +1,6 @@
 import os
 import telebot
+import zipfile
 
 bot = telebot.TeleBot(os.environ.get("INPUT_BOT_TOKEN"))
 
@@ -22,8 +23,12 @@ def main():
                            )
     if msg:
         print(f"::set-output name=result::Done!")
-    if os.environ.get('INPUT_FILE_PATH'):
-        with open(os.environ.get('INPUT_FILE_PATH'), 'rb') as doc:
+    artpath = os.environ.get('INPUT_FILE_PATH')
+    if artpath and zipfile.is_zipfile(artpath):
+        name = os.path.basename(artpath)
+        with zipfile.ZipFile(f'{name}', 'w') as arc_zip:
+            arc_zip.write(artpath)
+        with open(name, 'rb') as doc:
             file_msg = bot.send_document(int(os.environ.get('INPUT_CHAT_ID')), doc,
                                          disable_notification=disable_n,
                                          protect_content=protect_c
