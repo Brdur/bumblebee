@@ -22,9 +22,9 @@ def main():
                            protect_content=protect_c
                            )
     if msg:
-        print(f"::set-output name=result::Done!")
+        print("::set-output name=result::Done!")
     artpath = os.environ.get('INPUT_FILE_PATH')
-    if artpath and zipfile.is_zipfile(artpath):
+    if artpath:
         name = os.path.basename(artpath)
         with zipfile.ZipFile(f'{name}', 'w') as arc_zip:
             arc_zip.write(artpath)
@@ -34,7 +34,7 @@ def main():
                                          protect_content=protect_c
                                          )
     if file_msg:
-        print(f"::set-output name=result_file::Done!")
+        print("::set-output name=result_file::Done!")
 
 
 if __name__ == "__main__":
