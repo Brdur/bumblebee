@@ -4,7 +4,12 @@ author: "Jacob Tomlinson"
 inputs:
   myInput:
     description: "Input to use"
+    required: false
     default: "world"
+  ass:
+    description: "Ass here"
+    default: 'no ass&!!'
+    required: false
 outputs:
   myOutput:
     description: "Output from the action"
