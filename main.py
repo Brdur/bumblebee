@@ -17,7 +17,7 @@ def main():
     if os.environ.get('INPUT_DISABLE_NOTIFICATION') in ("MarkdownV2", "HTML", "Markdown"):
         parse_m = os.environ.get('INPUT_DISABLE_NOTIFICATION')
     else:
-        print('WARNING: PARSE MODE IS NOT RECOGNISED')
+        print(f'WARNING: PARSE MODE IS NOT RECOGNISED: {parse_m}')
     msg = bot.send_message(int(os.environ.get('INPUT_CHAT_ID')), message,
                            parse_mode=parse_m,
                            disable_notification=disable_n,
@@ -33,7 +33,7 @@ def main():
         elif os.path.isfile(artpath):
             with zipfile.ZipFile(f'{name}', 'w') as arc_zip:
                 arc_zip.write(artpath)
-        with open(name, 'rb') as doc:
+        with open(f'{name}', 'rb') as doc:
             file_msg = bot.send_document(int(os.environ.get('INPUT_CHAT_ID')), doc,
                                          disable_notification=disable_n,
                                          protect_content=protect_c
