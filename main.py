@@ -29,7 +29,7 @@ def main():
     if artpath:
         name = os.path.basename(artpath)
         if os.path.isdir(artpath):
-            shutil.make_archive(f'{name}', 'zip')
+            shutil.make_archive(f'{name}', 'zip', artpath)
         elif os.path.isfile(artpath):
             with zipfile.ZipFile(f'{name}', 'w') as arc_zip:
                 arc_zip.write(artpath)
