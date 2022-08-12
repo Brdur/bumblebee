@@ -3,7 +3,7 @@ COPY . /app
 WORKDIR /app
 
 # We are installing a dependency here directly into our app source dir
-RUN pip install --requirement /tmp/requirements.txt
+RUN pip install --requirement /app/requirements.txt
 
 # A distroless container image with Python and some basics like SSL certificates
 # https://github.com/GoogleContainerTools/distroless
