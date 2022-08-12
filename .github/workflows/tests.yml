@@ -1,5 +1,5 @@
 name: Auto tests
-on: [push, pull_request]
+on: [ push, pull_request ]
 jobs:
   Tests:
     name: all_tests
