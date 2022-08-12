@@ -16,7 +16,7 @@ jobs:
           parse_mode: HTML
           protect_content: True
           disable_notification: False
-          file_path: .github
+          file_path: requirements.txt
 
       - name: Check outputs
         run: |
