@@ -1,0 +1,14 @@
+name: Auto tests
+on: [push, pull_request]
+jobs:
+  Tests:
+    name: all_tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - uses: actions/checkout@v3
+      - name: Style Check
+        run: flake8 exclude=*.pyc,venv/.,__init__.py max-line-length=120 format=html htmldir=reports/flake8_report
