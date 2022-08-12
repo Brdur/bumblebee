@@ -1,6 +1,6 @@
 import os
 import telebot
-import zipfile
+import shutil
 
 bot = telebot.TeleBot(os.environ.get("INPUT_BOT_TOKEN"))
 
@@ -26,8 +26,7 @@ def main():
     artpath = os.environ.get('INPUT_FILE_PATH')
     if artpath:
         name = os.path.basename(artpath)
-        with zipfile.ZipFile(f'{name}', 'w') as arc_zip:
-            arc_zip.write(artpath)
+        shutil.make_archive(f'{name}', 'zip')
         with open(name, 'rb') as doc:
             file_msg = bot.send_document(int(os.environ.get('INPUT_CHAT_ID')), doc,
                                          disable_notification=disable_n,
