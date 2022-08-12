@@ -34,7 +34,7 @@ def main():
         elif os.path.isfile(artpath):
             with zipfile.ZipFile(f'{name}', 'w') as arc_zip:
                 arc_zip.write(artpath)
-        with open(f'{name}', 'rb') as doc:
+        with open(f'{name}.zip', 'rb') as doc:
             file_msg = bot.send_document(int(os.environ.get('INPUT_CHAT_ID')), doc,
                                          disable_notification=disable_n,
                                          protect_content=protect_c
