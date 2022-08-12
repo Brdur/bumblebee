@@ -37,8 +37,8 @@ def main():
                                          disable_notification=disable_n,
                                          protect_content=protect_c
                                          )
-    if file_msg:
-        print("::set-output name=result_file::Done!")
+        if file_msg:
+            print("::set-output name=result_file::Done!")
 
 
 if __name__ == "__main__":
