@@ -23,6 +23,7 @@ def main():
                            disable_notification=disable_n,
                            protect_content=protect_c
                            )
+
     if msg:
         print("::set-output name=result::Done!")
     artpath = os.environ.get('INPUT_FILE_PATH')
