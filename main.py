@@ -1,6 +1,5 @@
 import os
 import telebot
-from telebot.types import Input
 
 bot = telebot.TeleBot(os.environ.get("INPUT_BOT_TOKEN"))
 
