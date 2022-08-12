@@ -2,9 +2,9 @@ name: "Python Container Action Template"
 description: "Get started with Python Container actions"
 author: "Jacob Tomlinson"
 inputs:
-  ass:
+  faf:
     description: "Ass here"
-    default: 'no ass&!!'
+    default: 'COOL HERE'
     required: false
 outputs:
   myOutput:

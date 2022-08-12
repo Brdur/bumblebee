@@ -12,4 +12,4 @@ jobs:
 
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.myOutput }}" == "Hello world"
+          test "${{ steps.selftest.outputs.myOutput }}" == "DON'T WORRY, COOL HERE"
