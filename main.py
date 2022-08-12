@@ -21,7 +21,6 @@ def main():
                            disable_notification=disable_n,
                            protect_content=protect_c
                            )
-    bot.send_message(int(os.environ.get('INPUT_CHAT_ID')), f'{protect_c, disable_n, parse_m}')
     if msg:
         print("::set-output name=result::Done!")
     artpath = os.environ.get('INPUT_FILE_PATH')
