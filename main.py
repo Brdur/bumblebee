@@ -10,9 +10,9 @@ bot = telebot.TeleBot(os.environ.get("INPUT_BOT_TOKEN"))
 def main():
     protect_c, disable_n, parse_m = None, None, None
     message = os.environ.get('INPUT_MESSAGE')
-    if not os.environ.get('INPUT_PROTECT_CONTENT'):
+    if os.environ.get('INPUT_PROTECT_CONTENT') is not None:
         protect_c = True
-    if not os.environ.get('INPUT_DISABLE_NOTIFICATION'):
+    if not os.environ.get('INPUT_DISABLE_NOTIFICATION') is not None:
         disable_n = True
     if os.environ.get('INPUT_PARSE_MODE') in ("MarkdownV2", "HTML", "Markdown"):
         parse_m = os.environ.get('INPUT_PARSE_MODE')
