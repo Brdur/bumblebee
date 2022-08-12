@@ -12,7 +12,7 @@ jobs:
         with:
           bot_token: ${{ secrets.BOT_TOKEN }}
           chat_id: ${{ secrets.CHAT_ID }}
-          message: Hell is here
+          message: Success!
           parse_mode: HTML
           protect_content: True
           disable_notification: False
