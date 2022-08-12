@@ -12,7 +12,7 @@ jobs:
         with:
           bot_token: ${{ secrets.BOT_TOKEN }}
           chat_id: ${{ secrets.CHAT_ID }}
-          message: Success!
+          message: <b>Success!</b>
           parse_mode: HTML
           protect_content: True
           disable_notification: False
