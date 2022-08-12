@@ -5,6 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Prepare fake file
+        run: |
+          mkdir -p fake_dir
+          touch fake_dir/fake_file.txt
+          echo FAKE THINGS HERE >> fake_dir/fake_file.txt
       - name: Self test
         id: selftest
 
@@ -16,7 +21,7 @@ jobs:
           parse_mode: HTML
           protect_content: True
           disable_notification: False
-          file_path: .github
+          file_path: fake_dir
 
       - name: Check outputs
         run: |
