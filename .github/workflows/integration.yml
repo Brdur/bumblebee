@@ -9,7 +9,14 @@ jobs:
         id: selftest
 
         uses: Dalenir/bumblebee@master
+        with:
+          bot_token: ${{ secrets.BOT_TOKEN }}
+          chat_id: ${{ secrets.CHAT_ID }}
+          message: Hell is here
+          parse_mode: HTML
+          protect_content: True
+          disable_notification: False
 
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.myOutput }}" == "DON'T WORRY, COOL HERE"
+          test "${{ steps.selftest.outputs.result }}" == "Success!"

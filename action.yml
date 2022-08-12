@@ -1,14 +1,29 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
+name: "Bummlebee: light telegram bot courier"
+description: "Simple action to send any information from pipleline to Telegram"
+author: "Neveric Eluvia"
 inputs:
-  faf:
-    description: "Ass here"
-    default: 'COOL HERE'
+  bot_token:
+    description: "Token from BotFather"
+    required: true
+  chat_id:
+    description: "Chat telegram id. Find out via @JsonDumpBot in Telegram. If channel, bot must be admin."
+    required: true
+  message:
+    description: "Any message to send. Default to [ACTION WAS SERVED, M'LORD]."
+    required: false
+    default: "[ACTION WAS SERVED, M'LORD]"
+  parse_mode:
+    description: "Parse mode for message text. Can be one of: Markdown, MarkdownV2, HTML."
+    required: false
+  protect_content:
+    description: "Set to True to disallow forwarding message."
+    required: false
+  disable_notification:
+    description: "Set to True to disable notification."
     required: false
 outputs:
-  myOutput:
-    description: "Output from the action"
+  result:
+    description: "Result string"
 runs:
   using: "docker"
   image: "Dockerfile"
