@@ -16,7 +16,7 @@ inputs:
     description: "Parse mode for message text. Can be one of: Markdown, MarkdownV2, HTML."
     required: false
   protect_content:
-    description: "Set to True to hide message content from all except target user."
+    description: "Set to True to protect messages and files from direct forwarding."
     required: false
   disable_notification:
     description: "Set to True to disable notification."
