@@ -9,7 +9,7 @@ jobs:
         id: selftest
 
         # Put your action repo here
-        uses: Dalenit/bumblebee@master
+        uses: Dalenir/bumblebee@master
 
       - name: Check outputs
         run: |
