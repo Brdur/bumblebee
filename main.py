@@ -16,8 +16,6 @@ def main():
         disable_n = True
     if os.environ.get('INPUT_PARSE_MODE') in ("MarkdownV2", "HTML", "Markdown"):
         parse_m = os.environ.get('INPUT_PARSE_MODE')
-    else:
-        print(f'WARNING: PARSE MODE IS NOT RECOGNISED: {parse_m}')
     msg = bot.send_message(int(os.environ.get('INPUT_CHAT_ID')), message,
                            parse_mode=parse_m,
                            disable_notification=disable_n,
