@@ -16,7 +16,9 @@ jobs:
           parse_mode: HTML
           protect_content: True
           disable_notification: False
+          file_path: requirements.txt
 
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.result }}" == "Success!"
+          test "${{ steps.selftest.outputs.result }}" == "Done!"
+          test "${{ steps.selftest.outputs.result_file }}" == "Done!"

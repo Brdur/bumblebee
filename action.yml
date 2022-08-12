@@ -21,6 +21,9 @@ inputs:
   disable_notification:
     description: "Set to True to disable notification."
     required: false
+  file_path:
+    description: "Path to artifact"
+    required: false
 outputs:
   result:
     description: "Result string"
