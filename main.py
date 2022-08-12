@@ -27,7 +27,7 @@ def main():
     if artpath:
         name = os.path.basename(artpath)
         shutil.make_archive(f'{name}', 'zip')
-        with open(name, 'rb') as doc:
+        with open(f'{name}.zip', 'rb') as doc:
             file_msg = bot.send_document(int(os.environ.get('INPUT_CHAT_ID')), doc,
                                          disable_notification=disable_n,
                                          protect_content=protect_c
